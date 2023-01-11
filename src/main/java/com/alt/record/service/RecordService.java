@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class RecordService {
 
-    private RecordRepository recordRepository;
+    private final RecordRepository recordRepository;
 
     public RecordService(RecordRepository recordRepository) {
         this.recordRepository = recordRepository;
@@ -21,7 +21,7 @@ public class RecordService {
 
     /*
     Method returns count of parsed records. So this is basic information for client if all records in file were
-    valid. But this is very basic solution. To discuss what are needs in that situation.
+    valid or there wwere some duplicates. But this is very basic solution. To discuss what are needs in that situation.
      */
     public int save(MultipartFile file) {
         try {

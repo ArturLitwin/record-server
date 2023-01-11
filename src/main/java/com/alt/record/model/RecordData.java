@@ -13,8 +13,10 @@ public class RecordData {
 
     /*
     I decided to use natural key (primary key) as DB record ID because if record with specified primary_key already exist
-    in table, and record with specified primary key is loaded from csv file again it should be updated
-    But this solution is to discuss.
+    in table, and record with specified primary key is loaded from csv file again it should be updated. ALtenative
+    to this is implement regular DB id, but in that situation before saving record from CSV file there hat do be
+    check if file with specified primary key already exist in DB, if yes, it should be loaed from base and merged
+    with new data from csf file, and thad saved. But this solution is to discuss.
      */
     @Id
     @Column(name = "primary_key", nullable = false, unique = true)

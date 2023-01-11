@@ -11,10 +11,10 @@ import java.util.Optional;
 @Repository
 public interface RecordRepository extends JpaRepository<RecordData, String> {
 
-    public Optional<RecordData> findByPrimaryKey(String primaryKey);
+    Optional<RecordData> findByPrimaryKey(String primaryKey);
 
     @Transactional
     @Modifying
-    public void deleteByPrimaryKey(String primaryKey);
+    void deleteByPrimaryKey(String primaryKey);
 
 }
