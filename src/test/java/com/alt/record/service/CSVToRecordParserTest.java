@@ -17,7 +17,7 @@ public class CSVToRecordParserTest {
 
     @Test
     public void testLoadingAlaAndlaAndEla() throws IOException {
-        File csvFile = new File("src/main/resources/test3records.csv");
+        File csvFile = new File("src/test/resources/test3records.csv");
         InputStream inputStream = new FileInputStream(csvFile);
         Collection<RecordData> result = CSVToRecordParser.parseToRecordCollection(inputStream);
         Assert.assertEquals(3, result.size());
@@ -32,7 +32,7 @@ public class CSVToRecordParserTest {
     Test check if there are many records with that same primary_key, only the last one will be returned in result
     */
     public void testLoadingAla3Times() throws IOException {
-        File csvFile = new File("src/main/resources/testAla3times.csv");
+        File csvFile = new File("src/test/resources/testAla3times.csv");
         InputStream inputStream = new FileInputStream(csvFile);
         Collection<RecordData> result = CSVToRecordParser.parseToRecordCollection(inputStream);
         Assert.assertEquals(1, result.size());
@@ -44,7 +44,7 @@ public class CSVToRecordParserTest {
     Test check if there are corrupted records they will not be included into result
     */
     public void testLoadingCorruptedRecords() throws IOException {
-        File csvFile = new File("src/main/resources/testCorrupted.csv");
+        File csvFile = new File("src/test/resources/testCorrupted.csv");
         InputStream inputStream = new FileInputStream(csvFile);
         Collection<RecordData> result = CSVToRecordParser.parseToRecordCollection(inputStream);
         Assert.assertEquals(2, result.size());
