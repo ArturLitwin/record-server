@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS STANDARD_RECORD;
 CREATE TABLE STANDARD_RECORD (
-primary_key VARCHAR2 not null,
+primary_key VARCHAR2 not null unique,
 name VARCHAR2,
 description VARCHAR2,
 updated_timestamp TIMESTAMP
